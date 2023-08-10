@@ -1,0 +1,174 @@
+
+
+
+body {
+    display:grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr;
+    grid-template-rows: 20vh 60vh 20vh;
+    font-family: roboto;
+    background-image: linear-gradient(135deg, #153677, #4e085f);
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    font-family: roboto;
+    font-size: 64px;
+    color: white;
+   
+}
+
+.sidebar {
+    grid-row: 1 / 4;
+    grid-column: 1 / 2;
+    background-color:#00000087;
+    border-right: 5px solid black;
+
+}
+
+#header {
+    grid-column: 2 / 5;
+
+}
+
+#sidebar-ul {
+    list-style-type: none;
+    margin-top: 70%;  
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+}
+
+#sidebar-ul li {
+    margin-bottom: 10%;
+    color: yellow;
+    text-decoration: underline;
+    margin-top: 20%;
+}
+
+#toDo {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    background-color: aliceblue;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+}
+
+#firstRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-top: 25px;
+}
+
+
+.newTask {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    font-family: roboto;
+}
+
+#list-ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    margin-right: 50px;
+    font-size: 24px;
+}
+
+#list-ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(imgs/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+#list-ul li.checked::before {
+    background-image: url(imgs/checked.png);
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover{
+    background: #edeef0;
+}
+
+@font-face {
+    font-family: roboto;
+    src: url(../src/fonts/roboto.ttf);
+    font-weight:bolder;
+}
+
+.newProject {
+    justify-self: end;
+    width: 50%;
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: 40px;
+    background: #ff5945;
+    border-radius: 40px;
+    color: white;
+    font-size: 16px;
+    font-family: roboto;
+    height: 8%;
+}
+
+#project-name {
+    align-self: center;
+    border: none;
+    outline: none;
+    text-align: center;
+    background-color: aliceblue;
+    font-size: 30px;
+    margin-top: 20px;
+    font-family: roboto;
+}
