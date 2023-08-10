@@ -33,7 +33,7 @@ h1 {
 
 #sidebar-ul {
     list-style-type: none;
-    margin-top: 70%;  
+    margin-top: 35%;  
     font-size: 24px;
     display: flex;
     flex-direction: column;
@@ -64,6 +64,8 @@ h1 {
     outline: none;
     background: transparent;
     padding: 10px;
+    font-family: roboto;
+    font-size: 24px;
 }
 
 #firstRow {
@@ -160,6 +162,7 @@ ul li span:hover{
     font-size: 16px;
     font-family: roboto;
     height: 8%;
+    cursor: pointer;
 }
 
 #project-name {
@@ -170,5 +173,6 @@ ul li span:hover{
     background-color: aliceblue;
     font-size: 30px;
     margin-top: 20px;
+    margin-bottom: 10px;
     font-family: roboto;
 }

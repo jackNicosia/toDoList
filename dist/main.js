@@ -4,6 +4,8 @@ const newTask = document.createElement('button');
 const listUl = document.getElementById('list-ul')
 const newProject = document.createElement('button');
 const toDo = document.getElementById('toDo');
+const projectName = document.getElementById('project-name');
+const sidebarUl = document.getElementById('sidebar-ul');
 
 newTask.textContent = "New Task"
 newTask.classList.add("newTask")
@@ -51,18 +53,37 @@ listUl.addEventListener("click", function(e){
 function saveData(){
     localStorage.setItem("data", listUl.innerHTML);
 }
-
 function showTask(){
     listUl.innerHTML = localStorage.getItem("data");
 }
-
 showTask();
 
 
 
-
-
 newTask.addEventListener('click', addTask);
+
+newProject.addEventListener('click', addProject);
+
+
+
+
+
+function addProject(){
+    if (projectName.value === ''){
+        alert("Name your project!");
+    }
+    else {
+        let sideProject = document.createElement("li");
+        sideProject.textContent = projectName.value;
+        sidebarUl.appendChild(sideProject);
+        let projectData = document.createElement("li");
+        projectData.textContent = toDo.textContent;
+        sidebarUl.appendChild(projectData);
+        
+    }
+
+}
+
 
 
 
