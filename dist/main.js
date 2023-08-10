@@ -6,7 +6,7 @@ const newProject = document.createElement('button');
 const toDo = document.getElementById('toDo');
 const projectName = document.getElementById('project-name');
 const sidebarUl = document.getElementById('sidebar-ul');
-
+const sideProject = document.getElementsByClassName('sideProject');
 newTask.textContent = "New Task"
 newTask.classList.add("newTask")
 input.classList.add("input")
@@ -60,6 +60,19 @@ showTask();
 
 
 
+
+function saveProject(){
+    localStorage.setItem("doto", sidebarUl.innerHTML);
+}
+
+function showProjects(){
+    sidebarUl.innerHTML = localStorage.getItem("doto");
+}
+showProjects();
+
+
+
+
 newTask.addEventListener('click', addTask);
 
 newProject.addEventListener('click', addProject);
@@ -75,12 +88,21 @@ function addProject(){
     else {
         let sideProject = document.createElement("li");
         sideProject.textContent = projectName.value;
+        sideProject.classList.add("sideProject");
         sidebarUl.appendChild(sideProject);
-        let projectData = document.createElement("li");
-        projectData.textContent = toDo.textContent;
-        sidebarUl.appendChild(projectData);
+        input.value = "";
+        projectName.value = "";
+        listUl.textContent = "";
+        saveProject();
         
     }
+
+}
+
+//sideProject.addEventListener('click', loadProject);
+
+function loadProject(){
+    console.log("yo");
 
 }
 
